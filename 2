@@ -20,57 +20,45 @@ function getHumanChoice() {
 
 function playRound(humanChoice, computerChoice) {
   // Computing the result depend on the choice of human and computer, and display the result.
-  const bodyContainer = document.querySelector(".body-container")
-  const resultDiv = document.createElement("div");
-  resultDiv.classList.add("reasult");
-  bodyContainer.appendChild(resultDiv);
-
-  const greet = document.createElement("p");
-  let greetContent;
+  const div = document.createElement("div");
+  div.classList.add("reasult");
+  div.style.color = "blue";
+  div.style.width = "100px";
+  div.style.height = "100px";
 
   if(humanChoice == computerChoice) {
-    greetContent = "No one wins, you and the computer have the same choice";
     // console.log(`No one wins, the same choice`);
     return;
   } else if(humanChoice == "rock") {
     if(computerChoice == "scissors") {
       humanScore++;
-      greetContent = `You win! ${humanChoice} beats ${computerChoice}!`;
       // console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
     } else {
       computerScore++;
-      greetContent = `You lose! ${computerChoice} beats ${humanChoice}!`;
       // console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
     }
   } else if(humanChoice == "scissors") {
     if(computerChoice == "paper") {
       humanScore++;
-      greetContent = `You win! ${humanChoice} beats ${computerChoice}!`;
       // console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
     } else {
       computerScore++;
-      greetContent = `You win! ${humanChoice} beats ${computerChoice}!`;
       // console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
     }
   } else {
     if(computerChoice == "rock") {
       humanScore++;
-      greetContent = `You win! ${humanChoice} beats ${computerChoice}!`;
       // console.log(`You win! ${humanChoice} beats ${computerChoice}!`);
     } else {
       computerScore++;
-      greetContent = `You win! ${humanChoice} beats ${computerChoice}!`;
       // console.log(`You lose! ${computerChoice} beats ${humanChoice}!`);
     }
   }
 
-  greet.textContent = greetContent;
-  resultDiv.appendChild(greet);
-
-  // console.log("Human Selection: " + humanChoice);
-  // console.log("Computer Selection: " + computerChoice);
-  // console.log("Human Score: " + humanScore);
-  // console.log("Computer Score: " + computerScore);
+    // console.log("Human Selection: " + humanChoice);
+    // console.log("Computer Selection: " + computerChoice);
+    // console.log("Human Score: " + humanScore);
+    // console.log("Computer Score: " + computerScore);
 }
 
 // function playGame() {
